@@ -10,8 +10,8 @@
 }
 
 .singlePostImg {
-  width: 10%;
-  height: 300px;
+  width: 50%;
+  height: 1500px;
   border-radius: 5px;
   object-fit: cover;
 }

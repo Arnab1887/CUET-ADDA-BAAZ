@@ -10,7 +10,7 @@ export default function Comment() {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const res = await axios.get("/comments/"); //+ path;
+      const res = await axios.get("/comments/" + path); //+ path;
       setComments(res.data);
     };
     fetchComments();
