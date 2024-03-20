@@ -1,6 +1,16 @@
 import "./comment.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 export default function Comment({ comment }) {
+
+  const handleDelete = async () => {
+    let postadd = comment.postID;
+    try {
+      await axios.delete(`/comments/${comment._id}`, {
+      });
+      window.location.replace("/post/"+ postadd);
+    } catch (err) {}
+  };
   return (
     // <div className="post">
     //   <div className="postInfo">
@@ -22,6 +32,10 @@ export default function Comment({ comment }) {
             <Link to={`/?user=${comment.username}`} className="link">
               <b> {comment.username}</b>
             </Link>
+            <i
+              className="singlePostIcon far fa-trash-alt"
+              onClick={handleDelete}
+            ></i>
           </span>
         </div>
         <p className="singlePostDesc">{comment.desc}</p>
